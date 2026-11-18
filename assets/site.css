@@ -1,0 +1,69 @@
+/* Mutoscope: the graphite of the app icon. Shared by every page of the site. */
+:root {
+  color-scheme: dark;
+  --ground-centre: #3A3B40;   /* the icon's background, centre */
+  --ground-edge: #111214;     /* and edge */
+  --ivory: #EDE6D8;           /* the lightest card */
+  --muted: #A8A296;           /* between the darkest card (#9A9386) and ivory, for small text */
+  --font: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--ground-edge);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: max(24px, 4vmin);
+  background: radial-gradient(ellipse 85% 75% at 50% 42%, var(--ground-centre), var(--ground-edge));
+  color: var(--ivory);
+  font-family: var(--font);
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* The reel scales with the shorter side of the screen, phone to TV. */
+.reel {
+  display: block;
+  width: clamp(150px, 46vmin, 760px);
+  aspect-ratio: 1;
+  height: auto;
+}
+
+.name {
+  margin: clamp(16px, 3.5vmin, 64px) 0 0;
+  font-size: clamp(2.5rem, 10vmin, 10rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+.status {
+  margin: clamp(10px, 2vmin, 36px) 0 0;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 2.6vmin, 2.6rem);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Landscape phones: room is short, so the reel and name sit smaller. */
+@media (max-height: 480px) and (orientation: landscape) {
+  .reel { width: clamp(120px, 52vh, 260px); }
+  .name { font-size: clamp(2rem, 12vh, 4rem); }
+}
