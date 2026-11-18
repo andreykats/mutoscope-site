@@ -13,8 +13,17 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* The ground: the icon's radial gradient, painted on the root so it covers the whole canvas.
+   Safari 26 ignores theme-color and fills the strip above the page and the area behind its
+   toolbar with one solid colour, the page's background colour; so the gradient has fully faded
+   to that colour before the top and bottom edges, and the page runs on into those areas without
+   a seam. The body stays transparent, leaving Safari the root's colour to sample. */
 html {
-  background: var(--ground-edge);
+  min-height: 100%;
+  background-color: var(--ground-edge);
+  background-image: radial-gradient(ellipse 82% 44% at 50% 45%,
+    var(--ground-centre), #26272B 50%, var(--ground-edge));
+  background-repeat: no-repeat;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
@@ -25,10 +34,10 @@ body {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  padding: max(24px, 4vmin) max(20px, 4vmin) max(16px, 2.5vmin);
-  padding-left: max(20px, 4vmin, env(safe-area-inset-left));
+  padding-top: max(24px, 4vmin, env(safe-area-inset-top));
   padding-right: max(20px, 4vmin, env(safe-area-inset-right));
-  background: radial-gradient(ellipse 85% 75% at 50% 42%, var(--ground-centre), var(--ground-edge));
+  padding-bottom: max(16px, 2.5vmin, env(safe-area-inset-bottom));
+  padding-left: max(20px, 4vmin, env(safe-area-inset-left));
   color: var(--ivory);
   font-family: var(--font);
   -webkit-font-smoothing: antialiased;
