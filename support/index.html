@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Support · Mutoscope</title>
+  <meta name="description" content="How to reach the developer of Mutoscope.">
+  <meta name="theme-color" content="#111214">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="document-page">
+  <header class="site-header">
+    <a class="brand" href="../"><img src="../assets/reel-still.svg" alt="" width="40" height="40">Mutoscope</a>
+  </header>
+  <main class="document">
+    <article>
+      <h1>Support</h1>
+      <p class="contact">Write to the developer at <a href="mailto:support@mutoscope.app">support@mutoscope.app</a>.</p>
+
+      <h2>Questions and problems</h2>
+      <p>Email any question about Mutoscope, or a problem you've run into. Say what you were doing,
+        what happened, and which version of Mutoscope you have (Settings → About → Version).</p>
+      <p>In test versions (TestFlight), with diagnostics allowed, <strong>Report a Problem</strong>
+        in Settings → Advanced, or holding Play/Pause anywhere in the app, sends the developer your
+        description, a picture of the screen and the diagnostics log, straight from the Apple TV.</p>
+
+      <h2>Deleting reports you've uploaded</h2>
+      <p>To have the problem reports and crash logs you've sent from a test version deleted, email
+        <a href="mailto:support@mutoscope.app">support@mutoscope.app</a> with the
+        <strong>Session</strong> shown in Settings → Advanced. The
+        <a href="../privacy/">privacy policy</a> says what those uploads hold and where they're kept.</p>
+
+      <h2>Reporting a review or comment</h2>
+      <p>Hold Select on a Trakt or AniList review or comment to report it. When your profile has a
+        linked Trakt account, a Trakt post is reported to Trakt's moderators; otherwise the report
+        comes to the developer. Reported posts, and the posts of authors you block, are hidden on
+        your profile; Settings → Account → Community can show them again.</p>
+      <p>You can also email <a href="mailto:support@mutoscope.app">support@mutoscope.app</a> about
+        a post: say which title it was on and who wrote it.</p>
+
+      <h2>Source code of mpv and FFmpeg</h2>
+      <p>Mutoscope plays video with mpv and FFmpeg, which are licensed under the GNU LGPL 2.1 or
+        later. They and the libraries they use are built into Libmpv.framework, a separate dynamic
+        library inside the app, so it can be replaced with another build of them. The libraries
+        are used unmodified except for mpv, which has two changes: a video output that hands frames
+        to tvOS, and a filesystem check left out on tvOS.</p>
+      <p>For the complete source code of these libraries as built, including those changes, write
+        to <a href="mailto:support@mutoscope.app">support@mutoscope.app</a>. The full list of
+        libraries and their licences is in the app, in Settings → About → Acknowledgements.</p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <a href="../privacy/">Privacy</a>
+    <a href="../support/" aria-current="page">Support</a>
+  </footer>
+</body>
+</html>
